@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineOptions({
-  name: "index-view",
-});
+  name: 'index-view'
+})
 </script>
 
 <template>
