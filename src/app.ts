@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import './app.less'
+// import "@nutui/nutui-taro/dist/style.css";
 
 const App = createApp({
   onShow(options) {

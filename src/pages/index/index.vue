@@ -1,17 +1,11 @@
+<script setup lang="ts">
+defineOptions({
+  name: "index-view",
+});
+</script>
+
 <template>
-  <view class="index">
-    <Counter />
-  </view>
+  <view> <nut-button>123</nut-button> </view>
 </template>
 
-<script>
-import './index.less'
-import Counter from '../../components/Counter.vue'
-
-export default {
-  name: 'Index',
-  components: {
-    Counter
-  }
-}
-</script>
+<style lang="less" scoped></style>
