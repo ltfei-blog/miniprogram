@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "miniprogram",
   "description": "ltfei-blog",
-  "appid": "touristappid",
+  "appid": "wx6b0d1bd73ae522b0",
   "setting": {
     "urlCheck": true,
     "es6": false,
