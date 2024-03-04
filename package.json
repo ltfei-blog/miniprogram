@@ -80,5 +80,8 @@
     "unplugin-vue-components": "^0.26.0",
     "vue-loader": "^17.0.0",
     "webpack": "^5.78.0"
+  },
+  "resolutions": {
+    "@types/sass": "1.43.1"
   }
 }
