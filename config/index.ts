@@ -1,5 +1,6 @@
 import ComponentsPlugin from 'unplugin-vue-components/webpack'
 import NutUIResolver from '@nutui/auto-import-resolver'
+import { resolve } from 'path'
 
 const config = {
   projectName: 'miniprogram',
@@ -64,6 +65,9 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    lessLoaderOption: {
+      additionalData: `@import "${resolve('src/static/theme.less')}";`
     }
   },
   h5: {
