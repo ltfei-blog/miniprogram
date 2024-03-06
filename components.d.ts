@@ -9,6 +9,5 @@ declare module 'vue' {
   export interface GlobalComponents {
     Counter: typeof import('./src/components/Counter.vue')['default']
     NutButton: typeof import('@nutui/nutui-taro')['Button']
-    NutCheckbox: typeof import('@nutui/nutui-taro')['Checkbox']
   }
 }
