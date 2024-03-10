@@ -31,9 +31,29 @@ const login = async () => {
   const res = await loginApi(data.code)
   console.log(res)
   if (res.status != 200) {
-    return
+    return Taro.showToast({
+      title: '登录失败',
+      icon: 'error',
+      duration: 1000
+    })
   }
+
+  await Taro.setStorage({
+    data: res.data.token,
+    key: 'token'
+  })
+
   Taro.hideLoading()
+
+  if (res.data.type == 'register') {
+    return Taro.navigateTo({
+      url: '/subpkg/editUserInfo/editUserInfo'
+    })
+  } else {
+    return Taro.switchTab({
+      url: '/pages/my/my'
+    })
+  }
 }
 </script>
 

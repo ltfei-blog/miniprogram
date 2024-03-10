@@ -33,7 +33,7 @@ export default {
   subPackages: [
     {
       root: 'subpkg',
-      pages: ['login/login']
+      pages: ['login/login', 'editUserInfo/editUserInfo']
     }
   ]
 } as Config
