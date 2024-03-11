@@ -14,19 +14,21 @@
     display: flex;
     padding: 2vmin 7vmin;
     justify-content: space-between;
+    align-items: center;
     .userinfo {
       display: flex;
+      flex: 1;
       .avatar {
         width: 18.5vmin;
         height: 18.5vmin;
         border: 0.3vmin solid #fff;
         border-radius: 50%;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .image {
-          // width: 18.9vmin;
-          // height: 18.9vmin;
-          // border-radius: 50%;
           width: 100%;
           height: 100%;
         }
@@ -43,6 +45,43 @@
         }
         .desc {
           font-size: 3.33vmin;
+        }
+      }
+    }
+    .scan {
+      width: 5vmin;
+      height: 5vmin;
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &.not-login .userinfo .avatar {
+      align-items: flex-end;
+
+      .image {
+        width: 80%;
+        height: 80%;
+      }
+    }
+  }
+
+  .background-bottom {
+    overflow: hidden;
+    .data {
+      display: flex;
+      margin: 5vmin 0 0 7vmin;
+      .item {
+        margin-right: 4vmin;
+        display: flex;
+        align-items: flex-end;
+        .value {
+          font-size: 5vmin;
+        }
+        .name {
+          font-size: 4.44vmin;
+          color: rgba(89, 89, 89, 1);
+          margin-left: 1vmin;
         }
       }
     }
