@@ -3,13 +3,36 @@ import { ref } from 'vue'
 import LogoImg from '../../static/logo.png'
 import './login.less'
 import Taro from '@tarojs/taro'
-import { login as loginApi } from '../../apis/login'
+import {
+  login as loginApi,
+  checkScene as checkSceneApi,
+  init as initApi
+} from '../../apis/login'
 
 defineOptions({
   name: 'login'
 })
 
 const protocolValue = ref(true)
+
+const router = Taro.useRouter()
+let scene = router.params.scene
+
+const checkScene = async (scene: string) => {
+  Taro.showLoading()
+  const res = await checkSceneApi(scene)
+  if (res.status != 200) {
+    Taro.showToast({
+      title: '场景值无效',
+      icon: 'error'
+    })
+  }
+
+  Taro.hideLoading()
+}
+if (scene) {
+  checkScene(scene)
+}
 
 const login = async () => {
   if (!protocolValue.value) {
@@ -24,12 +47,17 @@ const login = async () => {
     title: '正在登录',
     mask: true
   })
+
+  if (!scene) {
+    const { data } = await initApi()
+    scene = data.uuid
+  }
+
   const data = await Taro.login()
   if (!data.code) {
     return
   }
-  const res = await loginApi(data.code)
-  console.log(res)
+  const res = await loginApi(data.code, scene)
   if (res.status != 200) {
     return Taro.showToast({
       title: '登录失败',
@@ -45,15 +73,21 @@ const login = async () => {
 
   Taro.hideLoading()
 
-  if (res.data.type == 'register') {
-    return Taro.navigateTo({
-      url: '/subpkg/editUserInfo/editUserInfo'
-    })
-  } else {
-    return Taro.switchTab({
-      url: '/pages/my/my'
-    })
-  }
+  Taro.showToast({
+    title: '登录成功',
+    duration: 1000
+  })
+  setTimeout(() => {
+    if (res.data.type == 'register') {
+      return Taro.navigateTo({
+        url: '/subpkg/editUserInfo/editUserInfo'
+      })
+    } else {
+      return Taro.switchTab({
+        url: '/pages/my/my'
+      })
+    }
+  }, 1000)
 }
 </script>
 
@@ -62,7 +96,7 @@ const login = async () => {
     <div class="logo">
       <Image :src="LogoImg" class="logo-image" />
     </div>
-    <div class="text red-text">登录 XXX 网页版</div>
+    <div class="text red-text">登录 ltfei-blog {{ scene ? '网页端' : '' }}</div>
     <button class="login-button" @click="login">一键登录</button>
     <div class="user-protocol">
       <div class="protocol">

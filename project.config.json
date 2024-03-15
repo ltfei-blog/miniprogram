@@ -4,7 +4,7 @@
   "description": "ltfei-blog",
   "appid": "wx6b0d1bd73ae522b0",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "enhance": false,
     "compileHotReLoad": false,
@@ -40,6 +40,13 @@
           "name": "",
           "pathName": "subpkg/editUserInfo/editUserInfo",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "扫码登录",
+          "pathName": "subpkg/login/login",
+          "query": "scene=aaa",
           "launchMode": "default",
           "scene": null
         }

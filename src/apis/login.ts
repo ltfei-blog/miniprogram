@@ -1,6 +1,15 @@
 import { request } from './request'
 
-export const login = (code: string) => {
+export const init = () => {
+  return request<{
+    uuid: string
+  }>({
+    url: '/users/wxLogin/init',
+    method: 'POST'
+  })
+}
+
+export const login = (code: string, scene: string) => {
   return request<{
     token: string
     type: 'login' | 'register'
@@ -8,7 +17,18 @@ export const login = (code: string) => {
     url: '/users/wxLogin/login',
     method: 'POST',
     data: {
-      code
+      code,
+      uuid: scene
+    }
+  })
+}
+
+export const checkScene = (scene: string) => {
+  return request({
+    url: '/users/wxLogin/checkScene',
+    method: 'POST',
+    data: {
+      uuid: scene
     }
   })
 }

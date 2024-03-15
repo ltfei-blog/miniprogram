@@ -12,11 +12,27 @@ defineOptions({
 
 const { user } = userStore()
 
-/**
- * todo: 扫码逻辑
- */
 const scan = async () => {
-  await Taro.scanCode({})
+  try {
+    const data = await Taro.scanCode({})
+
+    console.log(data)
+
+    if (!data.path) {
+      Taro.showToast({
+        title: '无效的二维码',
+        icon: 'error'
+      })
+    }
+    Taro.navigateTo({
+      url: '/' + data.path
+    })
+  } catch {
+    Taro.showToast({
+      title: '无效的二维码',
+      icon: 'error'
+    })
+  }
 }
 </script>
 <!-- todo: 页面底部按钮  -->
