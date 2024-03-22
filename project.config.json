@@ -49,6 +49,13 @@
           "query": "scene=aaa",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "subpkg/p/p",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

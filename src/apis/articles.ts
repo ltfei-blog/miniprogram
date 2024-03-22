@@ -7,3 +7,10 @@ export const list = () => {
     method: 'POST'
   })
 }
+
+export const details = (id: number | string) => {
+  return request<Articles>({
+    url: `/articles/details/${id}`,
+    method: 'POST'
+  })
+}

@@ -3,6 +3,7 @@ export interface Articles {
   title: string
   cover?: any
   desc: string
+  content?: string
   status: number
   author: number
   create_time: string
