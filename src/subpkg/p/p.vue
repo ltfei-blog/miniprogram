@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import './p.less'
 import Taro from '@tarojs/taro'
 import { details as detailsApi } from '../../apis/articles'
 import { ref } from 'vue'
@@ -34,8 +35,7 @@ details()
       <div class="author">作者：{{ articles?.author_data.username }}</div>
     </div>
     <div class="content">
-      <!-- todo: 内容解析 -->
-      {{ articles?.content }}
+      <Render :text="articles?.content"></Render>
     </div>
   </div>
 </template>
