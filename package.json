@@ -63,14 +63,15 @@
     "@tarojs/runtime": "3.6.24",
     "@tarojs/shared": "3.6.24",
     "@tarojs/taro": "3.6.24",
+    "dayjs": "^1.11.10",
     "pinia": "^2.0.10",
     "vue": "^3.2.24"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.0",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-angular": "^17.6.5",
     "@commitlint/cz-commitlint": "^17.5.0",
-    "@babel/core": "^7.8.0",
     "@nutui/auto-import-resolver": "^1.0.0",
     "@tarojs/cli": "3.6.24",
     "@tarojs/taro-loader": "3.6.24",

@@ -7,3 +7,4 @@ node_modules/
 .swc
 *.log
 components.d.ts
+*.local

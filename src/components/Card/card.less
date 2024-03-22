@@ -1,0 +1,72 @@
+.b-card {
+  background-color: #fff;
+  padding: 5vmin;
+  margin-bottom: 3vmin;
+  display: flex;
+  overflow: hidden;
+  color: #000;
+  text-decoration: none;
+  min-height: 13vmin;
+  .content {
+    flex: 1;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title {
+      font-size: 3.87vmin;
+      font-weight: 700;
+      letter-spacing: 0px;
+      line-height: 4.02vmin;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .desc {
+      font-size: 3.22vmin;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      .user {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        .avatar {
+          width: 3.47vmin;
+          height: 3.47vmin;
+          margin-right: 2vmin;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .username {
+          font-size: 3.22vmin;
+        }
+      }
+      .date {
+        margin-right: 3vmin;
+        font-size: 3.22vmin;
+        color: #666;
+      }
+    }
+  }
+  .cover {
+    width: 26.14vmin;
+    height: 18.52vmin;
+    flex-shrink: 0;
+    border-radius: 2vmin;
+    overflow: hidden;
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
