@@ -13,11 +13,15 @@ const getToken = async () => {
   if (cach) {
     return cach
   }
-  const token = await Taro.getStorage({
-    key: 'token'
-  })
-  cach = 'Bearer ' + token.data
-  return cach
+  try {
+    const token = await Taro.getStorage({
+      key: 'token'
+    })
+    cach = 'Bearer ' + token.data
+    return cach
+  } catch {
+    return null
+  }
 }
 
 export const request = async <T>(option: Taro.request.Option) => {

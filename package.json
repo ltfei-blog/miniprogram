@@ -64,6 +64,7 @@
     "@tarojs/shared": "3.6.24",
     "@tarojs/taro": "3.6.24",
     "dayjs": "^1.11.10",
+    "entities": "^4.5.0",
     "pinia": "^2.0.10",
     "vue": "^3.2.24"
   },

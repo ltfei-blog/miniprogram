@@ -8,6 +8,7 @@ import {
   checkScene as checkSceneApi,
   init as initApi
 } from '../../apis/login'
+import { getUserinfo } from '../../utils/getUserInfo'
 
 defineOptions({
   name: 'login'
@@ -70,6 +71,8 @@ const login = async () => {
     data: res.data.token,
     key: 'token'
   })
+
+  await getUserinfo()
 
   Taro.hideLoading()
 
