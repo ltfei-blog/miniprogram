@@ -7,7 +7,7 @@ import {
   editUserInfo as editUserInfoApi
 } from '../../apis/editUserinfo'
 import Taro from '@tarojs/taro'
-import { Input, Form } from '@tarojs/components'
+import { Input as TInput, Form as TForm } from '@tarojs/components'
 import { getUserinfo } from '../../utils/getUserInfo'
 
 defineOptions({
@@ -77,9 +77,9 @@ const submit = async (e: {
 
 <template>
   <div class="edit-user-info">
-    <Form @submit="submit" class="edit-user-info-form">
+    <t-form @submit="submit" class="edit-user-info-form">
       <h3 class="sub_title">用户名</h3>
-      <Input class="username_input" type="nickname" maxLength="32" name="username" />
+      <t-input class="username_input" type="nickname" maxLength="32" name="username" />
       <h3 class="sub_title">头像</h3>
       <button class="upload" open-type="chooseAvatar" @chooseavatar="uploadAvatar">
         <image
@@ -92,6 +92,6 @@ const submit = async (e: {
         <image v-else class="avatar" :src="avatar" mode="aspectFit" alt="" />
       </button>
       <button class="submit" form-type="submit">提交</button>
-    </Form>
+    </t-form>
   </div>
 </template>
