@@ -10,7 +10,7 @@ defineOptions({
   name: 'BCard'
 })
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     avatar?: string
     username?: string
@@ -19,7 +19,7 @@ withDefaults(
     desc: string
     viewUser?: boolean
     cover?: string
-    to?: string
+    to: string
     target?: '_self' | '_blank' | '_parent' | '_top'
     router?: boolean
   }>(),
@@ -30,7 +30,7 @@ withDefaults(
 
 const handleClick = () => {
   Taro.navigateTo({
-    url: '/p/'
+    url: props.to
   })
 }
 </script>

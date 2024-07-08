@@ -25,7 +25,7 @@ getArticles()
       v-for="i in list"
       :key="i.id"
       :title="i.title"
-      :to="`/p/${i.id}`"
+      :to="`/subpkg/p/p?p=${i.id}`"
       router
       :auto-collapse="470"
       :desc="i.desc"
