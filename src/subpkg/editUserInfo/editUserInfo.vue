@@ -7,7 +7,8 @@ import {
   editUserInfo as editUserInfoApi
 } from '../../apis/editUserinfo'
 import Taro from '@tarojs/taro'
-import { Input } from '@tarojs/components'
+import { Input, Form } from '@tarojs/components'
+import { getUserinfo } from '../../utils/getUserInfo'
 
 defineOptions({
   name: 'editUserInfo'
@@ -64,6 +65,7 @@ const submit = async (e: {
       icon: 'success',
       duration: 2000
     })
+    await getUserinfo()
     setTimeout(() => {
       Taro.switchTab({
         url: '/pages/my/my'

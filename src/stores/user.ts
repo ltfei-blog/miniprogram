@@ -6,12 +6,16 @@ interface Userinfo {
   id: number
   username: string
   avatar: string
-  city?: any
-  gender?: any
+  city?: string
+  gender: number
+  desc: string
   register_date: string
   last_login_date?: any
-  status?: any
+  status: number
   avatar_pendant?: any
+  get_likes: number
+  followers: number
+  following: number
 }
 type User =
   | {

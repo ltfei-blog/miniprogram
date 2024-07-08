@@ -71,17 +71,21 @@ const scan = async () => {
       </div>
     </div>
     <div class="background-bottom">
-      <div class="data">
-        <div class="item">
-          <div class="value">28</div>
+      <div class="data" v-if="user.isLogin">
+        <!-- <div class="item">
+          <div class="value">{{user.userinfo.}}</div>
           <div class="name">作品</div>
-        </div>
+        </div> -->
         <div class="item">
-          <div class="value">28</div>
+          <div class="value">{{ user.userinfo.get_likes || 0 }}</div>
           <div class="name">获赞</div>
         </div>
         <div class="item">
-          <div class="value">28</div>
+          <div class="value">{{ user.userinfo.following || 0 }}</div>
+          <div class="name">关注</div>
+        </div>
+        <div class="item">
+          <div class="value">{{ user.userinfo.followers || 0 }}</div>
           <div class="name">粉丝</div>
         </div>
       </div>
